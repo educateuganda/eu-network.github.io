@@ -1,0 +1,26 @@
+.student-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.student-details {
+  font-size: 2px;
+}
+
+.student-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.student-details p {
+  margin-bottom: 5px;
+}

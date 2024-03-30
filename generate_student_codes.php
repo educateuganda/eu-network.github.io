@@ -1,0 +1,58 @@
+<?php
+// Step 1: Connect to the database
+$host = 'localhost';
+$dbname = 'educate_uganda';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+// Step 2: Retrieve existing student profiles
+$query = "SELECT * FROM student_profile";
+$stmt = $pdo->query($query);
+$studentProfiles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Step 3: Generate unique student_code values and send emails
+function generateStudentCode($studentId) {
+    // Logic to generate unique student_code based on studentId
+    // Example: return a prefix + studentId
+    return 'STU-' . $studentId;
+}
+
+foreach ($studentProfiles as $profile) {
+    $studentId = $profile['id'];
+    $studentCode = generateStudentCode($studentId);
+    
+    // Check if the email_address key exists in the profile array
+    if (array_key_exists('email_address', $profile)) {
+        $email = $profile['email_address'];
+
+        // Update the student_code in the student_profile table
+        $updateQuery = "UPDATE student_profile SET student_code = :studentCode WHERE id = :studentId";
+        $updateStmt = $pdo->prepare($updateQuery);
+        $updateStmt->bindParam(':studentCode', $studentCode);
+        $updateStmt->bindParam(':studentId', $studentId);
+        $updateStmt->execute();
+
+        // Send email with the generated student code
+        $subject = 'Your Student Code';
+        $message = "Dear student,\n\nYour student code is: $studentCode\n\nRegards,\nEducate Uganda";
+        $headers = 'From: khanrymukiibi@gmail.com';
+
+        // Uncomment the following line to send the email (make sure to update the sender's email address)
+        // mail($email, $subject, $message, $headers);
+    } else {
+        echo "Email not found for student ID: $studentId\n";
+    }
+}
+
+// Close the database connection
+$pdo = null;
+
+echo "Student codes generated and updated successfully!";
+?>

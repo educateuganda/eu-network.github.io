@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("img/adminbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  color: rgb(247, 243, 243);
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 10px;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Educate Uganda Students Network</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <style>
+    /* Your CSS styles here */
+    body {
+      background-image: url('bg5.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      background-image: url('headerbg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 0px;
+      position: relative;
+    }
+
+    .marquee {
+      background-image: url('headerbg.jpg');
+      width: 100%;
+      background-color: #d77b7b;
+      padding: 0px 0;
+      overflow: hidden;
+    }
+
+    .marquee-text {
+      text-align: center;
+      font-size: 24px;
+      color: #fff;
+      animation: marquee-animation 10s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee-animation {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .logo-area {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-image {
+      max-width: 500px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .header-content h1 {
+       font-family: Georgia, serif;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    ul li {
+      margin-left: 10px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border: 5px solid #fff;
+      border-radius: 20px;
+      font-size: 40px; /* Increase font size */
+      font-weight: bold; /* Make font bold */
+    }
+
+    ul li a:hover {
+      background-color: blueviolet;
+      color: #fff;
+    }
+
+    .login-signup {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .login-signup li {
+      margin-left: 10px;
+    }
+
+    .login-signup li a {
+      border-radius: 50px;
+      background-color: black; /* Add black background color */
+    }
+
+    footer {
+      background-image: url('img/bgfoot.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 150px;
+      color: #fff;
+    }
+
+    footer h2 {
+      text-align: left;
+       /* Add font-family */
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: maroon;
+    
+    }
+
+    footer p {
+      text-align: left;
+      font-size: 40px;
+      font-family: Open Sans, Arial, sans-serif; /* Add font-family */
+      margin-bottom: 20px;
+       color: maroon;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <img src="head.png" alt="Logo" class="logo-image">
+    </div>
+    
+    <div class="header-content">
+      <h1>Welcome to Educate Uganda Students Network</h1>
+      <ul class="login-signup">
+        <li><a href="login.php">Login</a></li>
+        <li><a href="registrationpage.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+  <nav>
+    <div class="marquee">
+      <div class="marquee-text">THE EDUCATE UGANDA NETWORK</div>
+    </div>
+  </nav>
+  <main>
+    <section>
+      <!-- Content about the system -->
+    </section>
+  </main>
+  <footer>
+    <h2>Educate Uganda</h2>
+    <p>A non-profit organization focused on helping improve the education of the impoverished children of Uganda by providing school fees for orphaned children and improving their learning environment.</p>
+  </footer>
+</body>
+</html>
